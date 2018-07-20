@@ -86,7 +86,7 @@ $(function() {
 		})
 
 		it('at least 1 entry in feed', function() {
-			expect($('.entry .feed')).not.toBe(0);
+			expect($('.feed .entry').length).toBeGreaterThan(0);
 		})
 	});
 
@@ -102,9 +102,9 @@ $(function() {
 
 		beforeEach(function(done) {
 			loadFeed(0, function() {
-				oldCont = $('.feed').html();
+				oldCont = $('.feed .entry');
 				loadFeed(1, function() {
-					newCont = $('.feed').html();
+					newCont = $('.feed .entry');
 					done();
 				})
 			})
