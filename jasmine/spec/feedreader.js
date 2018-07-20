@@ -31,7 +31,7 @@ $(function() {
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url.length).not.toBe(0);
             }
-        })
+        });
 
 
         /* Test that loops through each feed in the
@@ -55,14 +55,21 @@ $(function() {
          */
         it('menu hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
-        })
+        });
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
+         /* Test that ensures the menu changes visibility when
+          * the menu icon is clicked. The menu should display when
+          * clicked and hides when clicked again.
           */
-    })
+        it('menu visibility toggles when clicked', function() {
+            $('.menu-icon-link').click();
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+            $('.menu-icon-link').click();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        })
+    });
+    
+    
     /* Test suite for initial entries */
     describe('Initial Entries', function () {
         /* TODO: Write a test that ensures when the loadFeed
@@ -71,12 +78,14 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-    })
+    });
+    
+    
     /* Test suite for new feed selection" */
     describe('New Feed Selection', function() {
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-    })
+    });
 }());
