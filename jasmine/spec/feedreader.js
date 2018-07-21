@@ -102,9 +102,9 @@ $(function() {
 
 		beforeEach(function(done) {
 			loadFeed(0, function() {
-				oldCont = $('.feed .entry');
+				oldCont = $('.feed .entry').html();
 				loadFeed(1, function() {
-					newCont = $('.feed .entry');
+					newCont = $('.feed .entry').html();
 					done();
 				})
 			})
